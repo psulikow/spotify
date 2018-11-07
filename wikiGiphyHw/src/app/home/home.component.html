@@ -1,0 +1,40 @@
+<h1>Week 8 Homework Wiki and Giphy!</h1>
+<form (ngSubmit)="submit(queryText.value)" class="form-inline my-2 my-lg-0">
+  <label>Search</label>
+  <input type="search"
+         #queryText
+         placeholder="Please enter text"/>
+  <button>Submit</button>
+</form>
+
+<div class="table-responsive" *ngIf="wikiRes.length !== 0">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Wikipedia Search Results</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let result of wikiRes">
+      <td> {{ result }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive" *ngIf="giphyRes.length !== 0">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Giphy Search Results</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <img *ngFor="let result of giphyRes" src="{{ result }}">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

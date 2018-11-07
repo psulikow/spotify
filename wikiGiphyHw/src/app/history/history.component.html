@@ -1,0 +1,16 @@
+<div class="table-responsive" >
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Search Text</th>
+      <th>TimeStamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let one of historyServ.getHistory()">
+      <td> {{one.searchText}}</td>
+      <td> {{ one.timestamp }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
